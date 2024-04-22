@@ -1,6 +1,7 @@
 // IMPORT PACKAGES
 const projects = require("./data/projects.json");
 const articles = require("./data/articles.json");
+const path = require("path");
 
 // Here you should import the required packages for your Express app: `express` and `morgan`
 const express = require("express");
@@ -28,7 +29,7 @@ app.use(morgan("dev"));
 // ROUTES
 // Start defining your routes here:
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "views/home.html");
+  res.sendFile(path.join(__dirname, "views", "home.html"));
 });
 
 app.get("/blog", (req, res) => {
